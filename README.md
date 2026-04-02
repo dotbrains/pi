@@ -14,69 +14,71 @@ This repository contains my sensible defaults for [pi coding agent](https://shit
 npm install -g @mariozechner/pi-coding-agent
 ```
 
-## Contents
+## Install This Config
 
-- `AGENTS.md` — Global instructions (loaded at startup from `~/.pi/agent/`)
-- `skills/` — Skill definitions ([Agent Skills standard](https://agentskills.io))
-- `themes/` — Color themes for the pi TUI
-- `extensions/` — Custom TypeScript extensions (project-level)
-- `prompts/` — Prompt templates (Markdown with `{{variables}}`)
-- `shared/` — Shared AI config submodule ([dotbrains/shared-ai-config](https://github.com/dotbrains/shared-ai-config))
+The contents of this repository should be placed in `~/.pi/`.
+
+```bash
+git clone --recursive https://github.com/dotbrains/pi.git $HOME/.pi
+```
+
+## Directory Structure
+
+```
+pi/                              # -> ~/.pi/
+├── agent/                       # -> ~/.pi/agent/
+│   ├── AGENTS.md                # Global instructions
+│   ├── extensions/              # TypeScript extension modules
+│   ├── skills/                  # Skill definitions
+│   │   ├── bowser/              # Browser automation skill
+│   │   ├── linear/              # Linear issue tracking skill
+│   │   ├── notion/              # Notion documentation skill
+│   │   └── ship/                # Commit, push, PR skill
+│   ├── themes/                  # TUI color themes
+│   └── sessions/                # Saved sessions (gitignored)
+├── agents/                      # Agent persona definitions
+├── settings.json                # Pi workspace settings
+├── damage-control-rules.yaml    # Safety audit rules
+├── shared/                      # Shared AI config submodule
+├── LICENSE
+└── README.md
+```
+
+## Features
 
 ### Skills
 
 | Skill | Purpose |
 |---|---|
 | `ship` | Commit, push, and open a PR |
-| `linear` | Search issues, manage comments, check status ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) |
-| `notion` | Search pages, view activity, list users ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) |
+| `linear` | Search issues, manage comments ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) |
+| `notion` | Search pages, view activity ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) |
+| `bowser` | Browser automation ([pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code)) |
+
+### Extensions
+
+16 TypeScript extensions for pi. Load with `pi -e <path>`:
+
+```bash
+pi -e extensions/minimal.ts
+pi -e extensions/agent-team.ts -e extensions/damage-control.ts
+```
 
 ### Themes
 
-Inherited from [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code). Switch with `/theme` or `Ctrl+T`.
+11 TUI themes from [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code). Switch with `/theme` or `Ctrl+T`.
 
-| Theme | Style |
-|---|---|
-| `catppuccin-mocha` | Soft pastels on dark |
-| `tokyo-night` | Balanced cool tones |
-| `gruvbox` | Warm retro |
-| `dracula` | Purple-accent dark |
-| `nord` | Arctic blue tones |
-| `rose-pine` | Elegant muted |
+catppuccin-mocha, cyberpunk, dracula, everforest, gruvbox, midnight-ocean, nord, ocean-breeze, rose-pine, synthwave, tokyo-night
 
-### Linear Integration
+### Agent Personas
 
-Requires [dotbrains/linear-cli](https://github.com/dotbrains/linear-cli):
+Role-specific agent definitions for per-project use (copy to `.pi/agents/` in your project):
 
-```bash
-npm install -g @dotbrains/linear-cli
-linear init
-```
-
-The `linear` skill teaches pi to search issues, get issue details with comments, add comments, list labels and users, and check platform status — all from the CLI.
-
-### Notion Integration
-
-Requires [dotbrains/notion-cli](https://github.com/dotbrains/notion-cli):
-
-```bash
-npm install -g @dotbrains/notion-cli
-notion init
-```
-
-The `notion` skill teaches pi to search pages, list trending content, view page activity, and list workspace users — all from the CLI.
-
-## Install This Config
-
-The contents of this repository should be placed in `~/.pi/agent/`.
-
-```bash
-git clone --recursive https://github.com/dotbrains/pi.git $HOME/.pi/agent
-```
+planner, reviewer, builder, documenter, scout, red-team, plan-reviewer, bowser, pi-pi (meta-agent experts)
 
 ## Shared Agent Definitions
 
-Skill body content is shared with [Claude Code](https://github.com/dotbrains/claude), [OpenCode](https://github.com/dotbrains/opencode), and [Codex CLI](https://github.com/dotbrains/codex) via the [shared-ai-config](https://github.com/dotbrains/shared-ai-config) submodule. To update after shared content changes:
+Skill body content is shared with [Claude Code](https://github.com/dotbrains/claude), [OpenCode](https://github.com/dotbrains/opencode), and [Codex CLI](https://github.com/dotbrains/codex) via the [shared-ai-config](https://github.com/dotbrains/shared-ai-config) submodule. To update:
 
 ```bash
 git submodule update --remote shared
@@ -85,7 +87,7 @@ git submodule update --remote shared
 
 ## Inspiration
 
-Themes and agent personas inspired by [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code).
+Extensions, agent personas, themes, and features adapted from [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code).
 
 ## License
 

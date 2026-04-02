@@ -1,5 +1,8 @@
-sessions/
-logs/
+# Pi sessions (auto-generated)
+agent/sessions/
+
+# Pi packages (installed via pi install)
+agent/git/
 
 # ============================================
 # OS & Editor artifacts
