@@ -16,18 +16,55 @@ npm install -g @mariozechner/pi-coding-agent
 
 ## Contents
 
-- `AGENTS.md` — Global instructions (loaded at startup)
-- `skills/` — Skill definitions (SKILL.md format, assembled from shared)
-- `shared/` — Shared AI config submodule ([dotbrains/shared-ai-config](https://github.com/dotbrains/shared-ai-config))
-- `extensions/` — Custom TypeScript extensions
+- `AGENTS.md` — Global instructions (loaded at startup from `~/.pi/agent/`)
+- `skills/` — Skill definitions ([Agent Skills standard](https://agentskills.io))
+- `themes/` — Color themes for the pi TUI
+- `extensions/` — Custom TypeScript extensions (project-level)
 - `prompts/` — Prompt templates (Markdown with `{{variables}}`)
-- `themes/` — Custom themes
+- `shared/` — Shared AI config submodule ([dotbrains/shared-ai-config](https://github.com/dotbrains/shared-ai-config))
 
 ### Skills
 
 | Skill | Purpose |
 |---|---|
 | `ship` | Commit, push, and open a PR |
+| `linear` | Search issues, manage comments, check status ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) |
+| `notion` | Search pages, view activity, list users ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) |
+
+### Themes
+
+Inherited from [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code). Switch with `/theme` or `Ctrl+T`.
+
+| Theme | Style |
+|---|---|
+| `catppuccin-mocha` | Soft pastels on dark |
+| `tokyo-night` | Balanced cool tones |
+| `gruvbox` | Warm retro |
+| `dracula` | Purple-accent dark |
+| `nord` | Arctic blue tones |
+| `rose-pine` | Elegant muted |
+
+### Linear Integration
+
+Requires [dotbrains/linear-cli](https://github.com/dotbrains/linear-cli):
+
+```bash
+npm install -g @dotbrains/linear-cli
+linear init
+```
+
+The `linear` skill teaches pi to search issues, get issue details with comments, add comments, list labels and users, and check platform status — all from the CLI.
+
+### Notion Integration
+
+Requires [dotbrains/notion-cli](https://github.com/dotbrains/notion-cli):
+
+```bash
+npm install -g @dotbrains/notion-cli
+notion init
+```
+
+The `notion` skill teaches pi to search pages, list trending content, view page activity, and list workspace users — all from the CLI.
 
 ## Install This Config
 
@@ -45,6 +82,10 @@ Skill body content is shared with [Claude Code](https://github.com/dotbrains/cla
 git submodule update --remote shared
 ./shared/assemble.sh pi
 ```
+
+## Inspiration
+
+Themes and agent personas inspired by [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code).
 
 ## License
 
