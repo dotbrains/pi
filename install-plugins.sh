@@ -25,5 +25,11 @@ npm install -g @dotbrains/linear-cli
 echo "Installing notion-cli..."
 npm install -g @dotbrains/notion-cli
 
+# superpowers - NOT AVAILABLE YET for pi
+# See https://github.com/obra/superpowers for supported platforms
 echo ""
+echo "Note: superpowers is not yet available for pi."
+echo "See https://github.com/obra/superpowers for supported platforms."
+echo ""
+
 echo "Done! Restart pi to load the plugins."

@@ -66,14 +66,16 @@ brew install just   # Command runner for model routing
 
 ### Skills
 
-| Skill | Purpose |
-|---|---|
-| `ship` | Commit, push, and open a PR |
-| `linear` | Search issues, manage comments ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) |
-| `notion` | Search pages, view activity ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) |
-| `bowser` | Browser automation ([pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code)) |
-| `superpowers` | Complete software development workflow ([obra/superpowers](https://github.com/obra/superpowers)) |
-| `get-shit-done` | GSD workflow system ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)) |
+| Skill | Purpose | Status |
+|---|---|---|
+| `ship` | Commit, push, and open a PR | ✅ |
+| `linear` | Search issues, manage comments ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) | ✅ |
+| `notion` | Search pages, view activity ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) | ✅ |
+| `bowser` | Browser automation ([pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code)) | ✅ |
+| `get-shit-done` | GSD workflow system ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)) | ✅ |
+| `superpowers` | Complete software development workflow ([obra/superpowers](https://github.com/obra/superpowers)) | 🔜 Coming soon |
+
+> **Note:** superpowers for pi is not yet available. The [superpowers repo](https://github.com/obra/superpowers) currently supports Claude Code, Codex, OpenCode, Cursor, Copilot CLI, and Gemini CLI. pi support is on the roadmap — subscribe to [superpowers issues](https://github.com/obra/superpowers/issues) for updates.
 
 ### Extensions
 
