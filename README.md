@@ -22,6 +22,18 @@ The contents of this repository should be placed in `~/.pi/`.
 git clone --recursive https://github.com/dotbrains/pi.git $HOME/.pi
 ```
 
+### Install Plugins
+
+After cloning, run the plugin installation script:
+
+```bash
+./install-plugins.sh
+```
+
+This installs:
+- `@dotbrains/linear-cli` - For the linear skill
+- `@dotbrains/notion-cli` - For the notion skill
+
 ## Directory Structure
 
 ```
