@@ -36,7 +36,6 @@ pi/                              # -> ~/.pi/
 │   │   └── ship/                # Commit, push, PR skill
 │   ├── themes/                  # TUI color themes
 │   └── sessions/                # Saved sessions (gitignored)
-├── agents/                      # Individual agent persona definitions
 ├── multi-team/                  # -> submodule: dotbrains/pi-multi-team
 ├── settings.json                # Pi workspace settings
 ├── damage-control-rules.yaml    # Safety audit rules
@@ -75,14 +74,6 @@ pi -e extensions/agent-team.ts -e extensions/damage-control.ts
 11 TUI themes from [pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code). Switch with `/theme` or `Ctrl+T`.
 
 catppuccin-mocha, cyberpunk, dracula, everforest, gruvbox, midnight-ocean, nord, ocean-breeze, rose-pine, synthwave, tokyo-night
-
-### Agent Personas
-
-Role-specific agent definitions for per-project use (copy to `.pi/agents/` in your project):
-
-**Individual:** planner, reviewer, builder, documenter, scout, red-team, plan-reviewer, bowser
-
-**Meta:** pi-pi (extension/theme/skill/config experts)
 
 ### Multi-Team Orchestration
 

@@ -54,28 +54,6 @@ notion page <page-id>           # Get page details
 notion trending                 # Trending content
 ```
 
-## Agent Personas
-
-Per-project `.pi/agents/*.md` files define role-specific behaviors. Common roles:
-
-- **planner** — Breaks features into ordered tasks with dependencies
-- **reviewer** — Reviews code for correctness, style, and edge cases
-- **builder** — Implements features from specs with test coverage
-- **documenter** — Writes and updates documentation
-- **scout** — Explores codebases to answer structural questions
-- **red-team** — Finds security issues and failure modes
-
-Refer to agent persona files in `.pi/agents/` when a project defines them.
-
 ## Multi-Team Orchestration
 
-Three-tier agent orchestration lives in the `multi-team/` submodule ([pi-multi-team](https://github.com/dotbrains/pi-multi-team)).
-
-```
-Orchestrator
-├── Engineering Lead → Frontend Dev, Backend Dev
-├── Planning Lead → Planner, Plan Reviewer
-└── Validation Lead → Reviewer, Security Reviewer, QA Engineer
-```
-
-The submodule includes a `justfile` for model-routed commands. See the submodule's README for full documentation.
+Three-tier agent orchestration available via `multi-team/` submodule. See [pi-multi-team](https://github.com/dotbrains/pi-multi-team).
