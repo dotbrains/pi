@@ -36,15 +36,21 @@ pi/                              # -> ~/.pi/
 │   │   └── ship/                # Commit, push, PR skill
 │   ├── themes/                  # TUI color themes
 │   └── sessions/                # Saved sessions (gitignored)
-├── agents/                      # Agent persona definitions
+├── agents/                      # Individual agent persona definitions
+├── multi-team/                  # -> submodule: dotbrains/pi-multi-team
 ├── settings.json                # Pi workspace settings
 ├── damage-control-rules.yaml    # Safety audit rules
-├── shared/                      # Shared AI config submodule
 ├── LICENSE
 └── README.md
 ```
 
 ## Features
+
+### Install Dependencies
+
+```bash
+brew install just   # Command runner for model routing
+```
 
 ### Skills
 
@@ -74,16 +80,22 @@ catppuccin-mocha, cyberpunk, dracula, everforest, gruvbox, midnight-ocean, nord,
 
 Role-specific agent definitions for per-project use (copy to `.pi/agents/` in your project):
 
-planner, reviewer, builder, documenter, scout, red-team, plan-reviewer, bowser, pi-pi (meta-agent experts)
+**Individual:** planner, reviewer, builder, documenter, scout, red-team, plan-reviewer, bowser
 
-## Shared Agent Definitions
+**Meta:** pi-pi (extension/theme/skill/config experts)
 
-Skill body content is shared with [Claude Code](https://github.com/dotbrains/claude), [OpenCode](https://github.com/dotbrains/opencode), and [Codex CLI](https://github.com/dotbrains/codex) via the [shared-ai-config](https://github.com/dotbrains/shared-ai-config) submodule. To update:
+### Multi-Team Orchestration
 
-```bash
-git submodule update --remote shared
-./shared/assemble.sh pi
+Three-tier agent orchestration lives in the [pi-multi-team](https://github.com/dotbrains/pi-multi-team) submodule. Inspired by [IndyDevDan's "One Agent Is NOT ENOUGH"](https://www.youtube.com/watch?v=M30gp1315Y4).
+
 ```
+Orchestrator (no codebase tools — only delegates)
+├── Engineering Lead → Frontend Dev, Backend Dev
+├── Planning Lead → Planner, Plan Reviewer
+└── Validation Lead → Reviewer, Security Reviewer, QA Engineer
+```
+
+The submodule includes a `justfile` for model-routed commands. See the [pi-multi-team README](https://github.com/dotbrains/pi-multi-team) for full documentation.
 
 ## Inspiration
 
