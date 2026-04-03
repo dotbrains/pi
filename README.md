@@ -31,6 +31,7 @@ After cloning, run the plugin installation script:
 ```
 
 This installs:
+- `get-shit-done` - GSD workflow system (via npx)
 - `@dotbrains/linear-cli` - For the linear skill
 - `@dotbrains/notion-cli` - For the notion skill
 
@@ -71,6 +72,8 @@ brew install just   # Command runner for model routing
 | `linear` | Search issues, manage comments ([dotbrains/linear-cli](https://github.com/dotbrains/linear-cli)) |
 | `notion` | Search pages, view activity ([dotbrains/notion-cli](https://github.com/dotbrains/notion-cli)) |
 | `bowser` | Browser automation ([pi-vs-claude-code](https://github.com/disler/pi-vs-claude-code)) |
+| `superpowers` | Complete software development workflow ([obra/superpowers](https://github.com/obra/superpowers)) |
+| `get-shit-done` | GSD workflow system ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)) |
 
 ### Extensions
 

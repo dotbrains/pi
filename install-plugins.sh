@@ -11,6 +11,10 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
+# get-shit-done - GSD workflow system
+echo "Installing get-shit-done..."
+npx get-shit-done-cc@latest --pi --global
+
 # linear-cli - for linear skill
 echo "Installing linear-cli..."
 npm config set @dotbrains:registry https://npm.pkg.github.com
