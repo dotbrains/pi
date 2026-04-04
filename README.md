@@ -34,6 +34,8 @@ This installs:
 - `get-shit-done` - GSD workflow system (via npx)
 - `@dotbrains/linear-cli` - For the linear skill
 - `@dotbrains/notion-cli` - For the notion skill
+- `pi-github` - GitHub extension (issues, PRs, file search, diffs)
+- `pi-dex` - Codex UI theme for Pi
 
 ## Directory Structure
 
@@ -75,16 +77,14 @@ brew install just   # Command runner for model routing
 | `get-shit-done` | GSD workflow system ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)) | ✅ |
 | `superpowers` | Complete software development workflow ([obra/superpowers](https://github.com/obra/superpowers)) | 🔜 Coming soon |
 
-> **Note:** superpowers for pi is not yet available. The [superpowers repo](https://github.com/obra/superpowers) currently supports Claude Code, Codex, OpenCode, Cursor, Copilot CLI, and Gemini CLI. pi support is on the roadmap — subscribe to [superpowers issues](https://github.com/obra/superpowers/issues) for updates.
+### Pi Extensions
 
-### Extensions
+| Extension | Purpose | Status |
+|---|---|---|
+| [pi-github](https://github.com/maria-rcks/pi-github) | GitHub issues, PRs, discussions, file search, diffs | ✅ |
+| [pi-dex](https://github.com/maria-rcks/pi-dex) | Codex UI theme (dark/light, compact/comfortable) | ✅ |
 
-16 TypeScript extensions for pi. Load with `pi -e <path>`:
-
-```bash
-pi -e extensions/minimal.ts
-pi -e extensions/agent-team.ts -e extensions/damage-control.ts
-```
+> **Note:** superpowers for pi is not yet available.
 
 ### Themes
 

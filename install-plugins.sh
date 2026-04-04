@@ -25,6 +25,14 @@ npm install -g @dotbrains/linear-cli
 echo "Installing notion-cli..."
 npm install -g @dotbrains/notion-cli
 
+# pi-github - GitHub extension for Pi (issues, PRs, discussions, file search)
+echo "Installing pi-github..."
+pi install git:github.com/maria-rcks/pi-github
+
+# pi-dex - Codex UI theme for Pi
+echo "Installing pi-dex..."
+pi install git:github.com/maria-rcks/pi-dex
+
 # superpowers - NOT AVAILABLE YET for pi
 # See https://github.com/obra/superpowers for supported platforms
 echo ""
