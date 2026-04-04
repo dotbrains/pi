@@ -1,3 +1,6 @@
 [submodule "multi-team"]
 	path = multi-team
 	url = https://github.com/dotbrains/pi-multi-team.git
+[submodule "third-party/agent-skills"]
+	path = third-party/agent-skills
+	url = https://github.com/addyosmani/agent-skills.git
