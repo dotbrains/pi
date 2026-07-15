@@ -7,6 +7,7 @@
 [![Pi: 0.80.x](https://img.shields.io/badge/pi-0.80.x-111827.svg)](https://github.com/earendil-works/pi)
 [![Firecrawl](https://img.shields.io/badge/firecrawl-enabled-f97316.svg)](docs/setup.md#firecrawl)
 [![Themes: GitHub Dark + Gruvbox](https://img.shields.io/badge/themes-GitHub%20Dark%20%2B%20Gruvbox-665c54.svg)](docs/setup.md#theme)
+[![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/license-PolyForm%20Shield%201.0.0-blue.svg)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/dotbrains/pi)](https://github.com/dotbrains/pi/commits/main)
 [![Repo size](https://img.shields.io/github/repo-size/dotbrains/pi)](https://github.com/dotbrains/pi)
 
@@ -54,7 +55,7 @@ This setup keeps the skill surface small:
 | `background-terminals` | Guidance for managing background terminal sessions |
 | `subagents`            | Guidance for delegating work to Pi subagents       |
 
-See [docs/skills.md](docs/skills.md).
+See [docs/skills/README.md](docs/skills/README.md).
 
 ## Configuration
 
