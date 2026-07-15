@@ -12,10 +12,10 @@ flowchart LR
 
 ## Available Themes
 
-| Theme                 | Palette                           | File                              |
-| --------------------- | --------------------------------- | --------------------------------- |
-| `github-dark-default` | GitHub dark default colors        | `themes/github-dark-default.json` |
-| `gruvbox-dark`        | Gruvbox dark hard-inspired colors | `themes/gruvbox-dark.json`        |
+| Theme          | Palette                           | File                       |
+| -------------- | --------------------------------- | -------------------------- |
+| `github-dark`  | GitHub dark colors                | `themes/github-dark.json`  |
+| `gruvbox-dark` | Gruvbox dark hard-inspired colors | `themes/gruvbox-dark.json` |
 
 ## Enable A Theme
 

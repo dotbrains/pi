@@ -54,10 +54,10 @@ existing settings:
 
 Available themes:
 
-| Theme                 | File                              |
-| --------------------- | --------------------------------- |
-| `github-dark-default` | `themes/github-dark-default.json` |
-| `gruvbox-dark`        | `themes/gruvbox-dark.json`        |
+| Theme          | File                       |
+| -------------- | -------------------------- |
+| `github-dark`  | `themes/github-dark.json`  |
+| `gruvbox-dark` | `themes/gruvbox-dark.json` |
 
 See [themes.md](themes.md) for palette details and theme structure.
 

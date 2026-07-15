@@ -42,7 +42,8 @@ See [docs/setup.md](docs/setup.md) for the full setup flow.
 | `ui-customization`     | Applies local Pi UI customizations                       |
 | `workflows`            | Runs repeatable local workflows with dashboard state     |
 
-See [docs/extensions.md](docs/extensions.md) for the extension inventory.
+See [docs/extensions/README.md](docs/extensions/README.md) for the extension
+inventory.
 
 ## Skills
 
@@ -66,7 +67,7 @@ themes can be enabled from `~/.pi/agent/settings.json`:
 }
 ```
 
-Available themes: `github-dark-default`, `gruvbox-dark`. See
+Available themes: `github-dark`, `gruvbox-dark`. See
 [docs/themes.md](docs/themes.md).
 
 ## Development

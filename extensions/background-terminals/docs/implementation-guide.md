@@ -442,7 +442,7 @@ reason). Resolution:
   "first N KiB dropped from view — full log: <spillPath>"; model-facing results reference the
   same path. `disposeAll` removes the private session spill directory after all entry scopes
   and spill flushes complete, so secret-bearing logs do not outlive the owning pi session.
-- Precedent for "truncate + point at the full file": docs/extensions.md "Output Truncation"
+- Precedent for "truncate + point at the full file": docs/extensions/README.md "Output Truncation"
   section recommends exactly this shape for tool results.
 
 ### 7.5 Entry wiring inside `start`
@@ -511,7 +511,7 @@ guarantees the completion follow-up message contains the final output tail.
 
 All model-facing strings live in `src/prompt.ts` (subagents convention). Register with
 `pi.registerTool`; parameters via `typebox` `Type.Object`; use `StringEnum` from
-`@earendil-works/pi-ai` if any enum appears (Google-compat rule, docs/extensions.md
+`@earendil-works/pi-ai` if any enum appears (Google-compat rule, docs/extensions/README.md
 "Tool Definition"). Throw plain `Error` for failures (that is what sets `isError`).
 
 ### 8.1 `bg_start`
@@ -560,7 +560,7 @@ const stderr = truncateTail(snap.stderr.text, { maxBytes: 8 * 1024, maxLines: 20
 ```
 
 `truncateTail` (not head) because for process logs the end matters — this is the documented
-guidance in docs/extensions.md Output Truncation. When truncated, append
+guidance in docs/extensions/README.md Output Truncation. When truncated, append
 `[stdout truncated: showing last X of Y. Full log: <spillPath or "in /ps viewer">]` using
 `formatSize` + the truncation result fields (see `truncatedOutput()` in subagents index.ts for
 the message shape). If `bg_status` observes a settled entry whose completion message is still
@@ -628,7 +628,7 @@ const flushResults = () => {
 ### 9.2 Why this is race-free (the reasoning to preserve in code comments)
 
 - `deliverAs: "followUp"` queues the message until the agent has no more tool calls; it never
-  interrupts a mid-turn stream (docs/extensions.md § pi.sendMessage).
+  interrupts a mid-turn stream (docs/extensions/README.md § pi.sendMessage).
 - `triggerTurn: true` wakes the model immediately **iff idle**; if busy, the queued follow-up
   is delivered when the current run settles — either way exactly one delivery.
 - The `Map`-keyed `resultDelivery` (keyed by id, `drain()` clears) makes double-delivery
@@ -665,7 +665,7 @@ Requirement: visible **only while ≥1 process is running**, directly above edit
 `N background terminal(s) running • /ps to view`.
 
 API: `ctx.ui.setWidget(key, linesOrFactory)` — default placement is already **above the
-editor** (docs/extensions.md "Widgets, Status, and Footer" + tui.md Pattern 5); do NOT pass
+editor** (docs/extensions/README.md "Widgets, Status, and Footer" + tui.md Pattern 5); do NOT pass
 `placement: "belowEditor"`. Clear with `setWidget(key, undefined)`.
 
 ```ts
@@ -778,7 +778,7 @@ must not mutate them (same doc comment as manager.ts line 89).
 
 ## 12. Lifecycle: reload / new / resume / fork / shutdown
 
-pi's session replacement flow (docs/extensions.md "Lifecycle Overview" + session_shutdown):
+pi's session replacement flow (docs/extensions/README.md "Lifecycle Overview" + session_shutdown):
 `/new`, `/resume`, `/fork`, `/reload`, and quit all emit `session_shutdown` (with `event.reason`)
 for the old extension instance, then re-instantiate extensions and emit `session_start`.
 Consequences:

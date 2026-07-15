@@ -12,23 +12,23 @@ flowchart TD
   extensions --> subagents["subagents"]
   extensions --> workflows["workflows"]
   extensions --> terminals["background-terminals"]
-  themes --> github["github-dark-default"]
+  themes --> github["github-dark"]
   themes --> gruvbox["gruvbox-dark"]
 ```
 
 ## Inventory
 
-| Extension              | Purpose                                                                   |
-| ---------------------- | ------------------------------------------------------------------------- |
-| `ask-user`             | Adds a multiple-choice prompt tool for agent/user decision points.        |
-| `background-terminals` | Runs and monitors long-lived shell commands in managed terminal sessions. |
-| `copy-all`             | Copies relevant project context for sharing or handoff.                   |
-| `firecrawl-search`     | Adds Firecrawl-backed search, scrape, and crawl tools.                    |
-| `git-info`             | Shows Git status and changed-file context in the Pi UI.                   |
-| `model-info`           | Displays active model information.                                        |
-| `subagents`            | Runs delegated Claude, Codex, Pi, or stub workers from Pi.                |
-| `ui-customization`     | Applies local Pi UI customizations.                                       |
-| `workflows`            | Runs repeatable local workflow definitions with dashboard state.          |
+| Extension                                         | Purpose                                                                   |
+| ------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`ask-user`](ask-user.md)                         | Adds a multiple-choice prompt tool for agent/user decision points.        |
+| [`background-terminals`](background-terminals.md) | Runs and monitors long-lived shell commands in managed terminal sessions. |
+| [`copy-all`](copy-all.md)                         | Copies relevant project context for sharing or handoff.                   |
+| [`firecrawl-search`](firecrawl-search.md)         | Adds Firecrawl-backed search, scrape, and crawl tools.                    |
+| [`git-info`](git-info.md)                         | Shows Git status and changed-file context in the Pi UI.                   |
+| [`model-info`](model-info.md)                     | Displays active model information.                                        |
+| [`subagents`](subagents.md)                       | Runs delegated Claude, Codex, Pi, or stub workers from Pi.                |
+| [`ui-customization`](ui-customization.md)         | Applies local Pi UI customizations.                                       |
+| [`workflows`](workflows.md)                       | Runs repeatable local workflow definitions with dashboard state.          |
 
 Each extension has its own `package.json` under `extensions/`.
 
