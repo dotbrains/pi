@@ -1,23 +1,80 @@
 # Development
 
+This repository uses Bun for package management and script execution. The test
+script itself uses Node's built-in test runner because the current TypeScript
+tests rely on `node --test --experimental-strip-types`.
+
 Install dependencies from the repository root:
 
 ```sh
-npm install
+bun install
 ```
 
 Run the standard checks:
 
 ```sh
-npm run check
-npm test
-npm run format:check
+bun run check
+bun run test
+bun run format:check
 ```
 
 Format TypeScript, CommonJS, and JSON files:
 
 ```sh
-npm run format
+bun run format
 ```
 
-The root test command runs deterministic local tests only. Live Claude and Codex backend tests remain available from `extensions/subagents/` with `npm run test:live`.
+The root test command runs deterministic local tests only. Live Claude and Codex
+backend tests remain available from `extensions/subagents/` with
+`bun run test:live`.
+
+```mermaid
+flowchart LR
+  install["bun install"] --> check["bun run check"]
+  check --> test["bun run test"]
+  test --> format["bun run format:check"]
+```
+
+## Scripts
+
+| Command                | Purpose                                                           |
+| ---------------------- | ----------------------------------------------------------------- |
+| `bun run check`        | Type-check the full repository with `tsc --noEmit`.               |
+| `bun run test`         | Run deterministic local tests with Node's test runner.            |
+| `bun run format`       | Apply Prettier to TypeScript, CommonJS, JSON, and Markdown files. |
+| `bun run format:check` | Check formatting without writing changes.                         |
+
+## Extension Packages
+
+Many extensions also have local package scripts. Run them from the extension
+directory when working on a single extension:
+
+```sh
+cd extensions/background-terminals
+bun run check
+bun run test
+```
+
+Use the root commands before committing because they cover shared code and the
+cross-extension test set.
+
+## Test Scope
+
+The root test script includes:
+
+| Area                   | Coverage                                                           |
+| ---------------------- | ------------------------------------------------------------------ |
+| `background-terminals` | process lifecycle, output capture, kill behavior, dashboard state  |
+| `firecrawl-search`     | tool output handling and failure formatting                        |
+| `git-info`             | process execution and refresh coordination                         |
+| `shared`               | child-session filtering, context usage, tool timeout guards        |
+| `subagents`            | manager behavior, result delivery, context usage, takeover UI      |
+| `workflows`            | artifacts, controller, metadata parsing, sandboxing, serialization |
+
+Live backend tests are excluded from the root script because they require local
+CLI authentication and may call external services.
+
+## Lockfile
+
+`bun.lock` is the canonical dependency lockfile. Do not regenerate
+`package-lock.json` unless the project intentionally moves back to npm.
