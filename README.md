@@ -1,5 +1,9 @@
 # pi
 
+[![Format](https://github.com/dotbrains/pi/actions/workflows/format.yml/badge.svg)](https://github.com/dotbrains/pi/actions/workflows/format.yml)
+[![Typecheck](https://github.com/dotbrains/pi/actions/workflows/typecheck.yml/badge.svg)](https://github.com/dotbrains/pi/actions/workflows/typecheck.yml)
+[![Test](https://github.com/dotbrains/pi/actions/workflows/test.yml/badge.svg)](https://github.com/dotbrains/pi/actions/workflows/test.yml)
+[![Extensions](https://github.com/dotbrains/pi/actions/workflows/extensions.yml/badge.svg)](https://github.com/dotbrains/pi/actions/workflows/extensions.yml)
 [![Platform: macOS + Linux](https://img.shields.io/badge/platform-macOS%20%2B%20Linux-lightgrey.svg)](docs/setup.md)
 [![TypeScript: 7.x](https://img.shields.io/badge/typescript-7.x-3178c6.svg)](docs/development.md)
 [![Bun: 1.3.x](https://img.shields.io/badge/bun-1.3.x-000000.svg)](https://bun.sh)

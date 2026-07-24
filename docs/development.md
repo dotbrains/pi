@@ -18,6 +18,20 @@ bun run test
 bun run format:check
 ```
 
+CI runs these root checks on every pull request and `main` push. It also walks
+each `extensions/*/package.json` and runs the extension-local `check` script,
+plus `test` when that extension defines one.
+
+The same extension package audit is available locally:
+
+```sh
+bun run check:extensions
+```
+
+`lefthook` installs Git hooks from `lefthook.yml` during `bun install`.
+Pre-commit runs formatting and type-checks. Pre-push runs the deterministic
+root test suite and extension package audit.
+
 Format TypeScript, CommonJS, and JSON files:
 
 ```sh
